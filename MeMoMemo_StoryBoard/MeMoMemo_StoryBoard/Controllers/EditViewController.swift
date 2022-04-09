@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EditViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
@@ -25,18 +26,46 @@ class EditViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //MARK: - 메모 리로드
     func fetchMemo() {
         do {
-            self.memoes = try context.fetch(Memo.fetchRequest())
+            let request = Memo.fetchRequest() as! NSFetchRequest<Memo>
+            let sort = NSSortDescriptor(key: "date", ascending: false)
+            request.sortDescriptors = [sort]
+            memoes = try context.fetch(request)
+ 
         } catch {
             
         }
     }
     
+    //MARK: - 메모 저장
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         
         navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
 
+    //MARK: - 메모 삭제
+    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "메모 삭제", message: "메모를 삭제하시겠습니까?", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "네", style: .default) { UIAlertAction in
+            let memoToRemove = self.memoes![self.memoNumber]
+            do {
+                try! self.context.delete(memoToRemove)
+            } catch {
+                print(error)
+            }
+            self.fetchMemo()
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancelButton = UIAlertAction(title: "아니오", style: .destructive)
+        
+        alert.addAction(cancelButton)
+        alert.addAction(okButton)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }

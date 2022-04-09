@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddMemoViewController: UIViewController {
     @IBOutlet weak var memoTitleTextField: UITextField!
@@ -25,9 +26,13 @@ class AddMemoViewController: UIViewController {
     
     func fetchMemo() {
         do {
-            memoes = try! context.fetch(Memo.fetchRequest())
+            let request = Memo.fetchRequest() as! NSFetchRequest<Memo>
+            let sort = NSSortDescriptor(key: "date", ascending: false)
+            request.sortDescriptors = [sort]
+            memoes = try context.fetch(request)
+            
         } catch {
-            print(error)
+            
         }
     }
     

@@ -20,6 +20,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "MemoTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "MemoTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -64,10 +67,15 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
-        let memo = self.memoes![indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemoTableViewCell", for: indexPath) as! MemoTableViewCell
+//        var content = cell.defaultContentConfiguration()
+//
+//        content.text = ""
+//        cell.contentConfiguration = content
         
-        cell.textLabel?.text = memo.title
+        cell.memoTitleLabel.text = memoes![indexPath.row].title
+        
+//        cell.memoDateLabel.text = memoes![indexPath.row]!.date
         return cell
     }
     

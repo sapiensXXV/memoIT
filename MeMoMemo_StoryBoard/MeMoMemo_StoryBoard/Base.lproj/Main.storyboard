@@ -71,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목부분입니다." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2h-7c-Fa2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2h-7c-Fa2">
                                 <rect key="frame" x="20" y="98" width="374" height="31.5"/>
                                 <color key="backgroundColor" name="SubColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -99,11 +99,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nLJ-bD-UY1">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="IPt-hp-ZrD">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="VFb-5f-kXc" id="uHu-3M-zHv"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="hKE-cr-yNx"/>
+                        <rightBarButtonItems>
+                            <barButtonItem style="done" systemItem="save" id="IPt-hp-ZrD">
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="VFb-5f-kXc" id="uHu-3M-zHv"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="4pR-eN-TvE">
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="VFb-5f-kXc" id="bvj-pJ-CU0"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="EFm-QE-jAB" id="c6H-f0-88T"/>
@@ -185,13 +194,13 @@
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <namedColor name="BackGroundColor">
-            <color red="0.99953407049999998" green="0.98835557699999999" blue="0.66685166527142858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.98799997568130493" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MemoViewColor">
             <color red="0.978515625" green="0.91710832261144559" blue="0.65996812403202398" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="SubColor">
-            <color red="1" green="1" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,6 +210,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
