@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB15087B27FB128F008D8CB5 /* MeMoMemo_StoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeMoMemo_StoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB15087B27FB128F008D8CB5 /* memoIT_with_StoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memoIT_with_StoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB15087E27FB128F008D8CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB15088027FB128F008D8CB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BB15088227FB128F008D8CB5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		BB15087227FB128F008D8CB5 = {
 			isa = PBXGroup;
 			children = (
-				BB15087D27FB128F008D8CB5 /* MeMoMemo_StoryBoard */,
+				BB15087D27FB128F008D8CB5 /* memoIT_with_StoryBoard */,
 				BB15087C27FB128F008D8CB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,12 +60,12 @@
 		BB15087C27FB128F008D8CB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB15087B27FB128F008D8CB5 /* MeMoMemo_StoryBoard.app */,
+				BB15087B27FB128F008D8CB5 /* memoIT_with_StoryBoard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB15087D27FB128F008D8CB5 /* MeMoMemo_StoryBoard */ = {
+		BB15087D27FB128F008D8CB5 /* memoIT_with_StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
 				BB15087E27FB128F008D8CB5 /* AppDelegate.swift */,
@@ -80,7 +80,7 @@
 				BB15088727FB128F008D8CB5 /* MeMoMemo_StoryBoard.xcdatamodeld */,
 				BB15089827FB131B008D8CB5 /* Constant.swift */,
 			);
-			path = MeMoMemo_StoryBoard;
+			path = memoIT_with_StoryBoard;
 			sourceTree = "<group>";
 		};
 		BB15089527FB12A3008D8CB5 /* Models */ = {
@@ -112,9 +112,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB15087A27FB128F008D8CB5 /* MeMoMemo_StoryBoard */ = {
+		BB15087A27FB128F008D8CB5 /* memoIT_with_StoryBoard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB15089227FB1290008D8CB5 /* Build configuration list for PBXNativeTarget "MeMoMemo_StoryBoard" */;
+			buildConfigurationList = BB15089227FB1290008D8CB5 /* Build configuration list for PBXNativeTarget "memoIT_with_StoryBoard" */;
 			buildPhases = (
 				BB15087727FB128F008D8CB5 /* Sources */,
 				BB15087827FB128F008D8CB5 /* Frameworks */,
@@ -124,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = MeMoMemo_StoryBoard;
+			name = memoIT_with_StoryBoard;
 			productName = MeMoMemo_StoryBoard;
-			productReference = BB15087B27FB128F008D8CB5 /* MeMoMemo_StoryBoard.app */;
+			productReference = BB15087B27FB128F008D8CB5 /* memoIT_with_StoryBoard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BB15087627FB128F008D8CB5 /* Build configuration list for PBXProject "MeMoMemo_StoryBoard" */;
+			buildConfigurationList = BB15087627FB128F008D8CB5 /* Build configuration list for PBXProject "memoIT_with_StoryBoard" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB15087A27FB128F008D8CB5 /* MeMoMemo_StoryBoard */,
+				BB15087A27FB128F008D8CB5 /* memoIT_with_StoryBoard */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92B5D498S7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MeMoMemo_StoryBoard/Info.plist;
+				INFOPLIST_FILE = memoIT_with_StoryBoard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -367,7 +367,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92B5D498S7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MeMoMemo_StoryBoard/Info.plist;
+				INFOPLIST_FILE = memoIT_with_StoryBoard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -389,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB15087627FB128F008D8CB5 /* Build configuration list for PBXProject "MeMoMemo_StoryBoard" */ = {
+		BB15087627FB128F008D8CB5 /* Build configuration list for PBXProject "memoIT_with_StoryBoard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB15089027FB1290008D8CB5 /* Debug */,
@@ -398,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB15089227FB1290008D8CB5 /* Build configuration list for PBXNativeTarget "MeMoMemo_StoryBoard" */ = {
+		BB15089227FB1290008D8CB5 /* Build configuration list for PBXNativeTarget "memoIT_with_StoryBoard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB15089327FB1290008D8CB5 /* Debug */,
