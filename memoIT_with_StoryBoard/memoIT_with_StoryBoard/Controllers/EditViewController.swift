@@ -41,6 +41,14 @@ class EditViewController: UIViewController {
     
     //MARK: - 메모 저장
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        memoes![memoNumber].title = titleTextField.text!
+        memoes![memoNumber].body = bodyTextView.text! 
+        
+        do {
+            try self.context.save()
+        } catch {
+            print(error)
+        }
         
         navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
@@ -52,7 +60,8 @@ class EditViewController: UIViewController {
         let okButton = UIAlertAction(title: "네", style: .default) { UIAlertAction in
             let memoToRemove = self.memoes![self.memoNumber]
             do {
-                try! self.context.delete(memoToRemove)
+                self.context.delete(memoToRemove)
+                try self.context.save()
             } catch {
                 print(error)
             }

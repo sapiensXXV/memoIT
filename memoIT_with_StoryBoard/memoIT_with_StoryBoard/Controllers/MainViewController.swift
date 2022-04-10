@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noMemoLabel: UILabel!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var memoes: [Memo]? = nil
@@ -22,6 +23,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         let nib = UINib(nibName: "MemoTableViewCell", bundle: nil)
+        if #available(iOS 15, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
+        
+        
         tableView.register(nib, forCellReuseIdentifier: "MemoTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -29,18 +35,30 @@ class MainViewController: UIViewController {
         tableView.backgroundColor = UIColor(named: Constant.Color.memoViewColor)
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 10
+        tableView.rowHeight = 70
         
         fetchMemo()
-        //navigationBarItem setting
+        
+        if memoes!.count == 0 {
+            noMemoLabel.text = "작성된 메모가 없습니다"
+        } else {
+            noMemoLabel.text = ""
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         fetchMemo()
+        if memoes!.count == 0 {
+            noMemoLabel.text = "작성된 메모가 없습니다"
+        } else {
+            noMemoLabel.text = ""
+        }
     }
     
     func fetchMemo() {
         do {
-            let request = Memo.fetchRequest() as! NSFetchRequest<Memo>
+            let request = Memo.fetchRequest() as! NSFetchRequest<Memo>      
             let sort = NSSortDescriptor(key: "date", ascending: false)
             request.sortDescriptors = [sort]
             memoes = try context.fetch(request)
@@ -61,32 +79,34 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memoes?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemoTableViewCell", for: indexPath) as! MemoTableViewCell
-//        var content = cell.defaultContentConfiguration()
-//
-//        content.text = ""
-//        cell.contentConfiguration = content
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath) as! MemoTableViewCell
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        guard let time = memoes![indexPath.row].date else { return cell }
+        let formattedString = dateFormatter.string(from: time)
+        
+        cell.memoDateLabel.text = formattedString
         cell.memoTitleLabel.text = memoes![indexPath.row].title
-        
-//        cell.memoDateLabel.text = memoes![indexPath.row]!.date
         return cell
     }
     
     
 }
 
+//MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     //셀이 선택되었으 때 편집 뷰로 이동(EditViewController)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let memoTitle = memoes![indexPath.row].title
-        let memoBody = memoes![indexPath.row].body
         
         selectedRow = indexPath.row
         //withIdentifier: segue의 identifier 이름

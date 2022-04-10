@@ -20,3 +20,7 @@ memoIT은 postIT에서 그 이름을 따왔습니다. 포스트잇이 생각날 
 * 작성한 메모 목록을 볼 수 있게 한다.
 * 메모 목록 왼쪽 상단의 버튼을 통해 **메모를 추가**할 수 있다.
 * 메모의 목록을 눌러 **메모를 삭제하거나 수정**할 수 있다.
+
+|✅ 메모 작성|✅ 메모 삭제|✅ 메모 수정|
+|:---:|:---:|:---:|
+|<img src="https://user-images.githubusercontent.com/76734067/162631647-24e4cec7-ed36-404b-ba35-777ff3004fd7.gif">|<img src="https://user-images.githubusercontent.com/76734067/162631654-5ee4b11c-9b9b-4ffc-b9f9-3f082ffe2b58.gif">|<img src="https://user-images.githubusercontent.com/76734067/162631656-1e201097-cc14-49eb-a3be-11c3dd2ab3cb.gif">|
