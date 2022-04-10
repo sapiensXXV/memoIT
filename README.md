@@ -1,7 +1,9 @@
 # memoIT
+<p>
 <img src="https://img.shields.io/badge/Swift-5.2-orange?logo=swift">
 <img src="https://img.shields.io/badge/Xcode-13.2.1-blue?logo=xcode">
 <img src="https://img.shields.io/badge/iOS-15.2-black?logo=apple">
+</p>
 
 ### 🗒 그때그때 기록해요
 
@@ -16,4 +18,5 @@ memoIT은 postIT에서 그 이름을 따왔습니다. 포스트잇이 생각날 
 
 ### 구현 기능
 * 작성한 메모 목록을 볼 수 있게 한다.
-* 
+* 메모 목록 왼쪽 상단의 버튼을 통해 **메모를 추가**할 수 있다.
+* 메모의 목록을 눌러 **메모를 삭제하거나 수정**할 수 있다.
