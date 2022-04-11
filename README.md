@@ -80,3 +80,6 @@ activateDefaultAlert(title: "제목이 입력되지 않았습니다",
     }
 }
 ```
+|❌ 버그 수정 전|⭕️ 버그 수정 후|
+|:---:|:---:|
+|![버그수정전](https://user-images.githubusercontent.com/76734067/162803538-866522d8-a77e-4107-bdb9-afe4f16366e8.gif)|![버그수정후](https://user-images.githubusercontent.com/76734067/162803560-84c765a2-d743-419f-bc39-835152f2f56d.gif)|

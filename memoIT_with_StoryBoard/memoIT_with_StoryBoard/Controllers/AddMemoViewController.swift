@@ -38,8 +38,6 @@ class AddMemoViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        
-        
         let okButton = UIAlertAction(title: "OK", style: .default)
         
         if memoTitleTextField.text == "" {
