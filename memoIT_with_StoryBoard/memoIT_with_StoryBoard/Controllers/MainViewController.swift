@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
     
     func fetchMemo() {
         do {
-            let request = Memo.fetchRequest() as! NSFetchRequest<Memo>      
+            let request = Memo.fetchRequest() as! NSFetchRequest<Memo>
             let sort = NSSortDescriptor(key: "date", ascending: false)
             request.sortDescriptors = [sort]
             memoes = try context.fetch(request)
