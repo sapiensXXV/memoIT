@@ -38,35 +38,41 @@ class AddMemoViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        let newMemo = Memo(context: self.context)
-        newMemo.title = memoTitleTextField.text
-        newMemo.body = memoBodyTextView.text
-        newMemo.date = Date()
+        
         
         let okButton = UIAlertAction(title: "OK", style: .default)
         
-        if newMemo.title == "" {
-            let alert = UIAlertController(title: "제목을 입력해주세요",
-                                          message: "제목을 한글자 이상 입력해주세요",
-                                          preferredStyle: .alert)
-            alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
-        } else if newMemo.body == "" {
-            let alert = UIAlertController(title: "내용이 입력되지 않았어요!",
-                                          message: "본문을 입력해주세요",
-                                          preferredStyle: .alert)
-            alert.addAction(okButton)
+        if memoTitleTextField.text == "" {
+            activateDefaultAlert(title: "제목이 입력되지 않았습니다",
+                                 message: "제목을 입력해주세요",
+                                 alertAction: okButton)
+        } else if memoBodyTextView.text == "" {
+            activateDefaultAlert(title: "내용이 입력되지 않았습니다",
+                                 message: "내용을 입력해주세요",
+                                 alertAction: okButton)
         } else {
+            let newMemo = Memo(context: self.context)
+            newMemo.title = memoTitleTextField.text
+            newMemo.body = memoBodyTextView.text
+            newMemo.date = Date()
             do {
                 try! self.context.save()
                 print("저장되었습니다~")
             } catch {
-                
+                print(error)
             }
             self.fetchMemo()
             navigationController?.popViewController(animated: true)
-//            dismiss(animated: true, completion: nil)
         }
+    }
+    
+    //기본 알림 생성->실행
+    func activateDefaultAlert(title: String, message: String, alertAction: UIAlertAction? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if let action = alertAction {
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

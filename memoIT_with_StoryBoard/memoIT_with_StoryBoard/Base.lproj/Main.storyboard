@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" systemColor="opaqueSeparatorColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" rowHeight="89" id="bZf-pj-Z5E" customClass="MemoTableViewCell" customModule="memoIT_with_StoryBoard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MemoCell" rowHeight="89" id="bZf-pj-Z5E" customClass="MemoTableViewCell" customModule="memoIT_with_StoryBoard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="394" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bZf-pj-Z5E" id="mAU-dZ-6zA">
@@ -51,7 +51,6 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="SubColor"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bXH-7b-Vma" userLabel="logo">
                                                     <rect key="frame" x="362" y="34" width="25" height="21.5"/>

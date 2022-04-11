@@ -44,14 +44,31 @@ class EditViewController: UIViewController {
         memoes![memoNumber].title = titleTextField.text!
         memoes![memoNumber].body = bodyTextView.text! 
         
-        do {
-            try self.context.save()
-        } catch {
-            print(error)
+        if titleTextField.text!.count == 0 {
+            
+            // 제목의 길이가 0일때
+            
+            let alert = UIAlertController(title: "제목을 입력해주세요", message: "제목을 입력하지 않았습니다", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "네", style: .default, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true, completion: nil)
+        } else if bodyTextView.text!.count == 0 {
+            
+            // 본문의 길이가 0일때
+            
+            let alert = UIAlertController(title: "내용을 입력해주세요", message: "내용을 입력하지 않았습니다", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "네", style: .default, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            do {
+                try self.context.save()
+            } catch {
+                print(error)
+            }
+            navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
-        
-        navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
     }
 
     //MARK: - 메모 삭제
